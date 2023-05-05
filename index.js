@@ -15,8 +15,10 @@ if (process.env.NODE_ENV !== "production") {
 const MemefestDB = require("./models/Memefest");
 
 // Route Files
-const appRouter = require("./routes/addMemefestRegistrations");
-app.use("/", appRouter);
+const addMemefestRegistrationRouter = require("./routes/addMemefestRegistrations");
+const getMemefestRegistrationRouter = require("./routes/getMemefestRegistrations");
+app.use("/register", addMemefestRegistrationRouter);
+app.use("/get-data", getMemefestRegistrationRouter);
 
 // Connection to the DB
 const CONNECTION_URL = process.env.MONGODB_URL;

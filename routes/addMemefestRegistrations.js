@@ -4,7 +4,7 @@ const MemefestDB = require("./../models/Memefest");
 
 router.get("/", (req, res) => {
   res.status(200);
-  res.send(`<form action="/" method="POST">
+  res.send(`<form action="/register" method="POST">
     <input name="name" type="text" placeholder="name"></input><br>
     <input name="emailid" type="text" placeholder="emailid"></input><br>
     <input name="college" type="text" placeholder="college"></input><br>

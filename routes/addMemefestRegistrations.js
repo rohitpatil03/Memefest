@@ -15,25 +15,23 @@ router.get("/", (req, res) => {
   </form>`);
 });
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
   const content = req.body;
-  const registrationForm = new MemefestDB({
-    name: content.name,
-    emailid: content.emailid,
-    college: content.college,
-    year: content.year,
-    phone: content.phone,
-    instagramid: content.instagramid,
-  });
-
-  registrationForm
-    .save()
-    .then((result) => {
-      res.send(result);
-    })
-    .catch((err) => {
-      console.log(err);
+  try {
+    const registrationForm = new MemefestDB({
+      name: content.name,
+      emailid: content.emailid,
+      college: content.college,
+      year: content.year,
+      phone: content.phone,
+      instagramid: content.instagramid,
     });
+
+    const registration = await registrationForm.save();
+    res.send(registration);
+  } catch (error) {
+    res.send(`Error : ${error}`);
+  }
 });
 
 module.exports = router;

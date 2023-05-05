@@ -11,6 +11,7 @@ const MemefestSchema = new Schema(
     emailid: {
       type: mongoose.SchemaTypes.Email,
       required: true,
+      unique: true,
     },
     college: {
       type: String,

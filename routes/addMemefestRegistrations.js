@@ -10,6 +10,7 @@ router.get("/", (req, res) => {
     <input name="college" type="text" placeholder="college"></input><br>
     <input name="year" type="text" placeholder="year"></input><br>
     <input name="phone" type="text" placeholder="phone"></input><br>
+    <input name="instagramid" type="text" placeholder="instagramid"></input><br>
     <input type="submit"></input>
   </form>`);
 });
@@ -22,6 +23,7 @@ router.post("/", (req, res) => {
     college: content.college,
     year: content.year,
     phone: content.phone,
+    instagramid: content.instagramid,
   });
 
   registrationForm

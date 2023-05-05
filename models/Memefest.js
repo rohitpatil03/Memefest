@@ -31,6 +31,10 @@ const MemefestSchema = new Schema(
       },
       required: true,
     },
+    instagramid: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );

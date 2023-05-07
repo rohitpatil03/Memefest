@@ -17,8 +17,8 @@ const MemefestDB = require("./models/Memefest");
 // Route Files
 const addMemefestRegistrationRouter = require("./routes/addMemefestRegistrations");
 const getMemefestRegistrationRouter = require("./routes/getMemefestRegistrations");
-app.use("/register", addMemefestRegistrationRouter);
-app.use("/get-data", getMemefestRegistrationRouter);
+app.use("/add-MemefestRegistration", addMemefestRegistrationRouter);
+app.use("/get-MemefestRegistration", getMemefestRegistrationRouter);
 
 // Connection to the DB
 const CONNECTION_URL = process.env.MONGODB_URL;

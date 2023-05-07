@@ -28,9 +28,9 @@ router.post("/", async (req, res) => {
     });
 
     const registration = await registrationForm.save();
-    res.send(registration);
+    res.status(200).send(registration);
   } catch (error) {
-    res.send(`Error : ${error}`);
+    res.status(400).send(`Error : ${error}`);
   }
 });
 

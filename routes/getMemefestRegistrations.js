@@ -6,9 +6,12 @@ router.get("/", async (req, res) => {
   try {
     const result = await MemefestDB.find();
     const registrationCount = result.length;
-    res.send(`Registration Count : ${registrationCount} <br><br> ${result}`);
+    res
+      .status(200)
+      .send(`Registration Count : ${registrationCount} <br><br> ${result}`);
   } catch (error) {
     console.log(error);
+    res.status(400);
   }
 });
 
